@@ -10,8 +10,8 @@ app.use(cors());
 app.use(express.json());
 
 // ALL CONTROLLERS
-const usersController = require('./controllers/usersController');
-app.use('/users', usersController);
+// const usersController = require('./controllers/usersController');
+// app.use('/users', usersController);
 
 // ROUTES 
 app.get("/", (req, res) => {
