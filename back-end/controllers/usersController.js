@@ -3,6 +3,9 @@ const express = require("express");
 const users = express.Router();
 
 // IMPORTS OF ALL USER QUERIES
+const {
+  getAllUsers
+} = require("../queries/users.js");
 
 //***ROUTES***//
 // ALL USERS // THE INDEX ROUTE //
