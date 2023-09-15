@@ -1,23 +1,21 @@
 // CONFINGURATIONS
-const express = require('express');
+const express = require("express");
 const users = express.Router();
 
 // IMPORTS OF ALL USER QUERIES
+const {
+  getAllUsers
+} = require("../queries/users.js");
 
-
-
-                 //***ROUTES***// 
-
-// ALL USERS // THE INDEX ROUTE // 
-users.get('/', async (req, res) => {
-    const allUsers = await getAllUsers();
-    if (allUsers[0]) {
-        res.status(200).json(allUsers);
-    } else {
-        res.status(500).json( {error: 'server error'});
-    }
+//***ROUTES***//
+// ALL USERS // THE INDEX ROUTE //
+users.get("/", async (req, res) => {
+  const allUsers = await getAllUsers();
+  if (allUsers[0]) {
+    res.status(200).json(allUsers);
+  } else {
+    res.status(500).json({ error: "server error" });
+  }
 });
 
 module.exports = users;
-
-
