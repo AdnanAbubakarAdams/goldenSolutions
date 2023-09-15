@@ -4,3 +4,6 @@ CREATE DATABASE goldensolutions_dev;
 \c goldensolutions_dev;
 
 CREATE TABLE users ();
+
+CREATE TABLE requests ();
+
