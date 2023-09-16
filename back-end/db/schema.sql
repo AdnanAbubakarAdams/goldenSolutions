@@ -16,7 +16,7 @@ CREATE TABLE users (
     email TEXT NOT NULL,
     user_type TEXT NOT NULL,
     profilephoto TEXT UNIQUE,
-    languages TEXT,
+    languages TEXT
 );
 
 CREATE TABLE requests (

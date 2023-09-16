@@ -4,7 +4,7 @@ const db = require("../db/dbConfig.js");
 const getAllUsers = async () => {
   try {
     console.log("Logging all users from the users table");
-    const users = await db.any("SELECT * FROM users ORDER BY uuid ASC");
+    const users = await db.any("SELECT * FROM users");
     return users;
   } catch (error) {
     return error;
