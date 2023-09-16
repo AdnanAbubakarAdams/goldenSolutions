@@ -11,7 +11,19 @@ const getAllUsers = async () => {
   }
 };
 
-// EXPORTING ALL USER QUERIES
+// QUERYING A SINGLE USER
+const getUser = async (id) => {
+  try {
+    console.log("logging single user")
+    const singleUser = await db.one("SELECT * FROM users WHERE id=$1", id);
+    return singleUser;
+  } catch (error) {
+    return error;
+  }
+};
+
+// EXPORTING ALL USER QUERIES TO USER CONTROLLER
 module.exports = {
   getAllUsers,
+  getUser
 };
