@@ -4,6 +4,7 @@ CREATE DATABASE goldensolutions_dev;
 \c goldensolutions_dev;
 
 CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
     firstname TEXT NOT NULL,
     lastname TEXT NOT NULL,
     dob TEXT NOT NULL,
@@ -16,10 +17,11 @@ CREATE TABLE users (
     email TEXT NOT NULL,
     user_type TEXT NOT NULL,
     profilephoto TEXT UNIQUE,
-    languages TEXT,
+    languages TEXT
 );
 
 CREATE TABLE requests (
+    id SERIAL PRIMARY KEY,
     req_title TEXT,
     req_date TEXT NOT NULL,
     description TEXT NOT NULL,
