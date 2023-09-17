@@ -22,8 +22,23 @@ const getUser = async (id) => {
   }
 };
 
+// QUERY TO CREATE A NEW USER
+const createANewUser = async (user) => {
+  console.log("Adding a new user");
+  try {
+    const aNewUser = await db.one(
+      "INSERT INTO users (firstname, lastname, dob, address, unit, city, state, zipcode, phonenumber, email, user_type, profilephoto, languages) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING *",
+      [user.firstname, user.lastname, user.dob, user.address, user.unit, user.city, user.state, user.zipcode, user.phonenumber, user.email, user.user_type, user.profilephoto, user.languages]
+    );
+    return aNewUser;
+  } catch (error) {
+    return error;
+  }
+}
+
 // EXPORTING ALL USER QUERIES TO USER CONTROLLER
 module.exports = {
   getAllUsers,
-  getUser
+  getUser, 
+  createANewUser
 };

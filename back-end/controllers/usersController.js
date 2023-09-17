@@ -5,7 +5,8 @@ const users = express.Router();
 // IMPORTS OF ALL USER QUERIES
 const {
   getAllUsers,
-  getUser
+  getUser,
+  createANewUser
 } = require("../queries/users.js");
 
 //***ROUTES***//
@@ -27,6 +28,18 @@ users.get("/:id", async (req, res) => {
     res.json({ payload: aUser, success: true });
   } else {
     res.status(404).json({ error: "user not Found!"})
+  }
+});
+
+// CREATE NEW USER
+users.post("/", async (req, res) => {
+  console.log("creating a new user");
+  try {
+    const aNewUser = await createANewUser(req.body);
+    console.log(aNewUser);
+    res.status(200).json({ payload: aNewUser, success: true });
+  } catch (error) {
+    res.status(400).json({ error: "error", success: false });
   }
 });
 
