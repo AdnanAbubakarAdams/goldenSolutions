@@ -34,11 +34,26 @@ const createANewUser = async (user) => {
   } catch (error) {
     return error;
   }
+};
+
+// QUERY TO EDIT OR UPDATE A USER // we would take some of the access as to what a user can edit
+const updateAUser = async (id, user) => {
+  try {
+    console.log("updating user info with id of" + id);
+    const updatedUser = await db.one(
+      "UPDATE users SET firstname=$1, lastname=$2, dob=$3, address=4, unit=$5, city=$6, state=$7,zipcode=$8, phonenumber=$9, email=$10, user_type=$11, profilephoto=$12, languages=$13 WHERE id=$14 RETURNING *",
+      [user.firstname, user.lastname, user.dob, user.address, user.unit, user.city, user.state, user.zipcode, user.phonenumber, user.email, user.user_type, user.profilephoto, user.languages, id]
+    );
+    return updatedUser;
+  } catch (error) {
+    return error;
+  }
 }
 
 // EXPORTING ALL USER QUERIES TO USER CONTROLLER
 module.exports = {
   getAllUsers,
   getUser, 
-  createANewUser
+  createANewUser,
+  updateAUser
 };

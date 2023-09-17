@@ -6,7 +6,8 @@ const users = express.Router();
 const {
   getAllUsers,
   getUser,
-  createANewUser
+  createANewUser,
+  updateAUser
 } = require("../queries/users.js");
 
 //***ROUTES***//
@@ -42,5 +43,21 @@ users.post("/", async (req, res) => {
     res.status(400).json({ error: "error", success: false });
   }
 });
+
+// UPDATING OR EDITING A USER --- ID WILL BE CONVERTED TO UUID AFTER FIREBASE
+users.put("/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const updatedUser = await updateAUser(id, req.body);
+    if(updatedUser.id) {
+      res.status(200).send(updatedUser);
+    } else {
+      res.status(404).json({ error: "user not found, not updated"})
+    }
+  } catch (error) {
+    return error;
+  }
+});
+
 
 module.exports = users;
