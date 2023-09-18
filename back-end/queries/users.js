@@ -48,6 +48,20 @@ const updateAUser = async (id, user) => {
   } catch (error) {
     return error;
   }
+};
+
+// QUERY TO DELETE A USER - id to be replaced with UUID
+const deleteAUser = async (id) => {
+  console.log("deleting a user from DB " + id);
+  try {
+    const deletedUser = await db.one(
+      "DELETE FROM users WHERE id=$1 RETURNING *",
+      id
+    );
+    return deletedUser;
+  } catch (error) {
+    return error;
+  }
 }
 
 // EXPORTING ALL USER QUERIES TO USER CONTROLLER
@@ -55,5 +69,6 @@ module.exports = {
   getAllUsers,
   getUser, 
   createANewUser,
-  updateAUser
+  updateAUser,
+  deleteAUser
 };
