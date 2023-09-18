@@ -7,7 +7,8 @@ const {
   getAllUsers,
   getUser,
   createANewUser,
-  updateAUser
+  updateAUser,
+  deleteAUser
 } = require("../queries/users.js");
 
 //***ROUTES***//
@@ -56,6 +57,17 @@ users.put("/:id", async (req, res) => {
     }
   } catch (error) {
     return error;
+  }
+});
+
+// DELETING A USER
+users.delete("/:id", async (req, res) => {
+  const { id } = req.params;
+  const deletedUser = await deleteAUser(id);
+  if(deletedUser.id) {
+    res.status(200).json(deletedUser);
+  } else {
+    res.status(400).json("User cannot be deleted, user is not found");
   }
 });
 
