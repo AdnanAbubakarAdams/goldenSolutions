@@ -13,6 +13,9 @@ app.use(express.json());
 const usersController = require('./controllers/usersController');
 app.use('/users', usersController);
 
+const requestsController = require('./controllers/requestsController');
+app.use('/requests', requestsController)
+
 // ROUTES 
 app.get("/", (req, res) => {
     res.send("Welcome to Adnan's GoldenSolutions Database!")
