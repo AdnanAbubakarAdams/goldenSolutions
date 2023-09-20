@@ -4,7 +4,8 @@ const requests = express.Router();
 // IMPORTS OF REQUEST QUERIES
 const {
     getAllRequests,
-    createRequest
+    createRequest,
+    editRequest
 } = require("../queries/requests.js");
 
 // ALL REQUEST / INDEX ROUTE
@@ -25,6 +26,17 @@ requests.post("/", async (req, res) => {
         res.json(createdRequest);
     } catch (error) {
         return error;
+    }
+});
+
+// EDIT A REQUEST
+requests.put("/:id", async (req, res) => {
+    const { id } = req.params;
+    const editedRequest = await editRequest(req.body, id);
+    if (editedRequest.id) {
+        res.status(200).json(editedRequest);
+    } else {
+        res.status(400).json({ error: "this request was not updated, please try again!"})
     }
 });
 
