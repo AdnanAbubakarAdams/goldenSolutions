@@ -36,6 +36,7 @@ const createRequest = async (request) => {
   }
 };
 
+// QUERY TO EDIT A REQUEST --- id's will be replaced by uuids
 const editRequest = async (request, id) => {
   try {
     console.log("editing request with the id of " + id);
@@ -57,9 +58,24 @@ const editRequest = async (request, id) => {
   }
 };
 
+//  QUERY TO DELETE A REQUEST
+const deleteRequest = async (id) => {
+  try {
+    console.log("Deleting the request with the id of " + id);
+    const deletedRequest = await db.one(
+      "DELETE FROM requests WHERE id=$1 RETURNING *",
+      id
+    );
+    return deletedRequest;
+  } catch (error) {
+    return error;
+  }
+};
+
 // EXPORTING ALL REQUEST QUERIES
 module.exports = {
   getAllRequests,
   createRequest,
   editRequest,
+  deleteRequest
 };
