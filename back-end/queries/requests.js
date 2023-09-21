@@ -18,7 +18,7 @@ const createRequest = async (request) => {
   try {
     console.log("query to create or add a new request");
     const createdRequest = await db.one(
-      "INSERT INTO requests (req_title, re_date, description, location, time, image, assigned, complete) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *",
+      "INSERT INTO requests (req_title, req_date, description, location, time, image, assigned, complete) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *",
       [
         request.req_title,
         request.req_date,
