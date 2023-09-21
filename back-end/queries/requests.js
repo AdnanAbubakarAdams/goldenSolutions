@@ -13,6 +13,20 @@ const getAllRequests = async () => {
   }
 };
 
+//  SINGLE REQUEST
+const getARequest = async (id) => {
+  try {
+    console.log("logging a single request from request table");
+    const singleRequest = await db.one(
+      "SELECT * FROM requests WHERE id=$1",
+      id
+    );
+    return singleRequest;
+  } catch (error) {
+    return error;
+  }
+};
+
 // QUERY TO CREATE A REQUEST
 const createRequest = async (request) => {
   try {
@@ -77,5 +91,6 @@ module.exports = {
   getAllRequests,
   createRequest,
   editRequest,
-  deleteRequest
+  deleteRequest,
+  getARequest
 };

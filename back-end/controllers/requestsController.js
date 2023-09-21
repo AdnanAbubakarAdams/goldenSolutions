@@ -7,6 +7,7 @@ const {
   createRequest,
   editRequest,
   deleteRequest,
+  getARequest
 } = require("../queries/requests.js");
 
 // ALL REQUEST / INDEX ROUTE
@@ -16,6 +17,17 @@ requests.get("/", async (req, res) => {
     res.status(200).json(allRequests);
   } else {
     res.status(500).json({ error: "server error!" });
+  }
+});
+
+// GET A SINGLE REQUEST
+requests.get("/:id", async (req, res) => {
+  const { id } = req.params;
+  const aRequest = getARequest(id);
+  if (aRequest) {
+    res.json({ payload: aRequest, success: true });
+  } else {
+    res.status(404).json({ error: "request not found!"})
   }
 });
 
