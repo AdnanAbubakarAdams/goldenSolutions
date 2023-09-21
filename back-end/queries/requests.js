@@ -13,12 +13,26 @@ const getAllRequests = async () => {
   }
 };
 
+//  SINGLE REQUEST
+const getARequest = async (id) => {
+  try {
+    console.log("logging a single request from request table");
+    const singleRequest = await db.one(
+      "SELECT * FROM requests WHERE id=$1",
+      id
+    );
+    return singleRequest;
+  } catch (error) {
+    return error;
+  }
+};
+
 // QUERY TO CREATE A REQUEST
 const createRequest = async (request) => {
   try {
     console.log("query to create or add a new request");
     const createdRequest = await db.one(
-      "INSERT INTO requests (req_title, re_date, description, location, time, image, assigned, complete) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *",
+      "INSERT INTO requests (req_title, req_date, description, location, time, image, assigned, complete) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *",
       [
         request.req_title,
         request.req_date,
@@ -77,5 +91,6 @@ module.exports = {
   getAllRequests,
   createRequest,
   editRequest,
-  deleteRequest
+  deleteRequest,
+  getARequest
 };
