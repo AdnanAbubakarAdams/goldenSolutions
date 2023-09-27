@@ -55,7 +55,7 @@ const editRequest = async (request, id) => {
   try {
     console.log("editing request with the id of " + id);
     const editedRequest = await db.one(
-      "UPDATE request SET req_title=$1, req_date=$2, description=$3, location=$4, time=$5, image=$6, WHERE id=$7 RETURNING *",
+      "UPDATE requests SET req_title=$1, req_date=$2, description=$3, location=$4, time=$5, image=$6 WHERE id=$7 RETURNING *",
       [
         request.req_title,
         request.req_date,

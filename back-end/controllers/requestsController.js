@@ -23,9 +23,9 @@ requests.get("/", async (req, res) => {
 // GET A SINGLE REQUEST
 requests.get("/:id", async (req, res) => {
   const { id } = req.params;
-  const aRequest = getARequest(id);
+  const aRequest = await getARequest(id);
   if (aRequest) {
-    res.json({ payload: aRequest, success: true });
+    res.json(aRequest);
   } else {
     res.status(404).json({ error: "request not found!"})
   }
