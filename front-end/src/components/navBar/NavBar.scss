@@ -1,0 +1,43 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #42999b;
+    box-shadow: 2px 2px 4px gray;
+    margin-bottom: 30px;
+    height: 8vh;
+    font-size: 1.2rem;
+
+    &__lists {
+        list-style: none;
+    }
+
+    &__links {
+        text-decoration: none;
+        color: white;
+    }
+
+    &__logo {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: white;
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 3rem;
+    }
+
+    &__toggler {
+        display: none;
+    }
+}
