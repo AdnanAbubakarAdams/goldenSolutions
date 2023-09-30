@@ -26,7 +26,7 @@ const NavBar = () => {
   return (
     <nav className="navBar">
       <Link to="/" className="navBar__logo">
-        GoldenSolutions
+        <img src="/images/GoldenSolutions.png" alt="theLogo" />
       </Link>
       <ul className={active}>
         <li className="navBar__lists">
