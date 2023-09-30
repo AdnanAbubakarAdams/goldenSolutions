@@ -4,7 +4,9 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+.navBar img {
+    width: 300px;
+}
 .navBar {
     display: flex;
     align-items: center;
@@ -22,10 +24,14 @@
     &__links {
         text-decoration: none;
         color: white;
+        // color: black;
     }
 
     &__logo {
-        text-transform: uppercase;
+        margin-left: 30px;
+        justify-self: start;
+        font-size: 2rem;
+        margin-top: 5px;
         text-decoration: none;
         color: white;
     }
