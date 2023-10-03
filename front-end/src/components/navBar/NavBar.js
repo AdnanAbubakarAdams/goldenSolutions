@@ -26,7 +26,7 @@ const NavBar = () => {
   return (
     <nav className="navBar">
       <Link to="/" className="navBar__logo">
-        <img src="/images/GoldenSolutions.png" alt="theLogo" />
+        <img src="/images/GoldenSolutionLite.png" alt="theLogo" />
       </Link>
       <ul className={active}>
         <li className="navBar__lists">

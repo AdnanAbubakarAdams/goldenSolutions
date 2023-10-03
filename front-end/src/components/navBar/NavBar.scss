@@ -1,49 +1,98 @@
 *,
 *::after,
 *::before {
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  box-sizing: border-box;
 }
+
 .navBar img {
-    width: 300px;
+  width: 300px;
 }
+
 .navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  // background-color: #42999b;
+  // box-shadow: 2px 2px 4px gray;
+  margin-bottom: 30px;
+  height: 8vh;
+  font-size: 1.2rem;
+
+  &__lists {
+    list-style: none;
+  }
+
+  &__links {
+    text-decoration: none;
+    // color: white;
+    color: black;
+  }
+
+  &__logo {
+    margin-left: 30px;
+    justify-self: start;
+    font-size: 2rem;
+    margin-top: 5px;
+    text-decoration: none;
+    color: white;
+  }
+
+  &__menu {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #42999b;
-    box-shadow: 2px 2px 4px gray;
-    margin-bottom: 30px;
-    height: 8vh;
-    font-size: 1.2rem;
+    gap: 3rem;
+  }
 
-    &__lists {
-        list-style: none;
-    }
+  &__toggler {
+    display: none;
+  }
 
-    &__links {
-        text-decoration: none;
-        color: white;
-        // color: black;
-    }
+  &__toggler div {
+    width: 2.5rem;
+    height: 0.2rem;
+    margin: 0.4rem;
+    background-color: rgb(204, 204, 204);
+    transition: 0.3s ease-in;
+  }
+}
 
-    &__logo {
-        margin-left: 30px;
-        justify-self: start;
-        font-size: 2rem;
-        margin-top: 5px;
-        text-decoration: none;
-        color: white;
+@media screen and (max-width: 768px) {
+  .navBar {
+    &__toggler {
+      display: block;
+      cursor: pointer;
     }
 
     &__menu {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        gap: 3rem;
+      position: fixed;
+      top: 7vh;
+      right: 0;
+      height: 93vh;
+      width: 70vw;
+      /* background: rgb(0, 33, 65); */
+      background: #21cbce;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: 0.5s ease-in;
     }
 
-    &__toggler {
-        display: none;
+    /* Active Class */
+    &__active {
+      transform: translateX(0%);
     }
+
+    /* Toggle Icon Animation */
+
+    .toggle .line1 {
+      transform: rotate(-45deg) translate(-4px, 5px);
+    }
+    .toggle .line2 {
+      opacity: 0;
+    }
+    .toggle .line3 {
+      transform: rotate(45deg) translate(-4px, -5px);
+    }
+  }
 }
