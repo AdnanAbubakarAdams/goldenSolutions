@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+// SCSS
+import './Home.scss';
+
+import Cards from "../cards/Cards";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -61,9 +65,26 @@ const HomePage = () => {
         </div>
         <button onClick={() => navigate("/sign-up")}>SIGN UP NOW</button>
       </div>
-      {/* <div className="">
-
-      </div> */}
+      <div className="homePage__cardholder">
+        <Cards
+        label='Golden Solutions'
+        src=''
+        text=''
+        path='#' 
+        />
+        <Cards
+        label='Golden Solutions'
+        src=''
+        text=''
+        path='#'
+        />
+        <Cards
+        label='Golden Solutions'
+        src=''
+        text=''
+        path='#'
+        />
+      </div>
     </div>
   );
 };
