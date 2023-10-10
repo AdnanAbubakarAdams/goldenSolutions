@@ -4,8 +4,8 @@ import HomePage from './HomePage';
 const Home = () => {
   return (
     <>
+    <h1>WELCOME TO GOLDEN SOLUTIONS!</h1>
     <div className='home'>
-        {/* <h1>WELCOME TO GOLDEN SOLUTIONS!</h1> */}
         <video src='/video/volunteer.mov' autoPlay loop muted />
     </div>
     <HomePage />
