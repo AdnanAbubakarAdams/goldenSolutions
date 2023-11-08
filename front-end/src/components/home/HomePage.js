@@ -63,24 +63,24 @@ const HomePage = () => {
           </p>
           {handleLearnMore("paraTwo")}
         </div>
-        <button onClick={() => navigate("/sign-up")}>SIGN UP NOW</button>
+        <button className="homePage__btn" onClick={() => navigate("/sign-up")}>SIGN UP NOW</button>
       </div>
       <div className="homePage__cardholder">
         <Cards
         label='Golden Solutions'
-        src=''
-        text=''
+        src='images/RechargeCard.jpeg'
+        text='Helping his GrandMa with recharge card'
         path='#' 
         />
         <Cards
         label='Golden Solutions'
-        src=''
-        text=''
+        src='images/GroceryShopping.jpeg'
+        text='Helping with with grocery shopping'
         path='#'
         />
         <Cards
         label='Golden Solutions'
-        src=''
+        src='images/gettingup.jpeg'
         text=''
         path='#'
         />

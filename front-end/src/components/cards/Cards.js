@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// CSS
+import "./Cards.scss"
+
 const Cards = (props) => {
   return (
     <>
@@ -9,7 +12,7 @@ const Cards = (props) => {
           <figure className="cards__pic" data-category={props.label}>
             <img className="cards__image" alt="photo" src={props.src} />
           </figure>
-          <div className="card__info">
+          <div className="cards__info">
             <h5 className="cards__text">{props.text}</h5>
           </div>
         </Link>
