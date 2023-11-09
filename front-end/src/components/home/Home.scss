@@ -23,6 +23,7 @@ video {
     line-height: 1.71;
     text-transform: none;
 }
+
 .homePage {
     background: #fff;
     width: 100%;
@@ -31,6 +32,37 @@ video {
     margin-right: auto;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    &__btn {
+        background-color: #429998;
+        color: white;
+        border: none;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        padding: 10px 50px 10px 50px;
+        border-radius: 25px;
+        letter-spacing: .2em;
+
+        &:hover {
+            background-color: #B8DEDC;
+        }
+    }
+
+    &__cardholder {
+        display: flex;
+        max-width: 1120px;
+        margin-bottom: 24px;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
 }
 
 
