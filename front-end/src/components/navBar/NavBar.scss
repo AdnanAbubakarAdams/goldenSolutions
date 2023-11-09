@@ -22,12 +22,30 @@
 
   &__lists {
     list-style: none;
+    // position: relative;
   }
 
   &__links {
     text-decoration: none;
-    // color: white;
     color: black;
+    position: relative;
+
+    &::after {
+      content: "";
+      height: 2px;
+      width: 100%;
+      background: #21cbce;
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      opacity: 0;
+      // transition: all 0.5s ease 0s;
+      transition: all 0.2s linear;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
   }
 
   &__logo {
@@ -56,6 +74,22 @@
     margin: 0.4rem;
     background-color: rgb(204, 204, 204);
     transition: 0.3s ease-in;
+  }
+
+  &__button {
+    background-color: #21cbce;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    padding: 15px 50px 15px 50px;
+    border-radius: 25px;
+    letter-spacing: 0.2em;
+
+    &:hover {
+      background-color: #92ddd9;
+    }
   }
 }
 
