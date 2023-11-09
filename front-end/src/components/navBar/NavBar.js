@@ -45,7 +45,7 @@ const NavBar = () => {
           </Link>
         </li>
         <li className="navBar__lists">
-          <button>Login</button>
+          <button className="navBar__button">Login</button>
         </li>
       </ul>
       <div onClick={navBarToggle} className={icon}>

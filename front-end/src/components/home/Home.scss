@@ -24,6 +24,50 @@ video {
   line-height: 1.71;
   text-transform: none;
 }
+h1 {
+    margin: 15px;
+    text-align: center;
+}
+
+.underline{
+    background: 0 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 0;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+    font-size: 18px;
+    line-height: 1.71;
+    color: #000!important;
+    display: inline-block;
+    padding-bottom: 4px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    margin-bottom: 60px;
+  }
+    
+   
+  .underline::after{
+    /* text-decoration: underline #E29578 2px; */
+    background-color: #E29578;
+    bottom: 0;
+    content: '';
+    height: 1px;
+    left: 0;
+    position: absolute;
+    -webkit-transition: width .1s linear;
+    -o-transition: width .1s linear;
+    transition: width .1s linear;
+    width: 60%;
+    
+  }
+  .underline:hover::after{
+    width: 100%;
+  
+  }
 
 .homePage {
   background: #fff;
@@ -42,13 +86,13 @@ video {
   }
 
   &__btn {
-    background-color: #429998;
+    background-color: #21cbce;
     color: white;
     border: none;
     margin-top: 10px;
     margin-bottom: 10px;
     font-weight: bold;
-    padding: 10px 50px 10px 50px;
+    padding: 15px 50px 15px 50px;
     border-radius: 25px;
     letter-spacing: 0.2em;
 
@@ -66,6 +110,3 @@ video {
   }
 }
 
-// h1 {
-
-// }
