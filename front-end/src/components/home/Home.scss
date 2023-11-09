@@ -50,6 +50,18 @@ video {
         padding: 10px 50px 10px 50px;
         border-radius: 25px;
         letter-spacing: .2em;
+
+        &:hover {
+            background-color: #B8DEDC;
+        }
+    }
+
+    &__cardholder {
+        display: flex;
+        max-width: 1120px;
+        margin-bottom: 24px;
+        justify-content: space-between;
+        margin: 0 auto;
     }
 }
 

@@ -81,7 +81,7 @@ const HomePage = () => {
         <Cards
         label='Golden Solutions'
         src='images/gettingup.jpeg'
-        text=''
+        text='Help GrandPa take a walk around the park'
         path='#'
         />
       </div>
