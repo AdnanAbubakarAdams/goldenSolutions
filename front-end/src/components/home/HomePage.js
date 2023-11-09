@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // SCSS
-import './Home.scss';
+import "./Home.scss";
 
 import Cards from "../cards/Cards";
 
@@ -63,26 +63,28 @@ const HomePage = () => {
           </p>
           {handleLearnMore("paraTwo")}
         </div>
-        <button className="homePage__btn" onClick={() => navigate("/sign-up")}>SIGN UP NOW</button>
+        <button className="homePage__btn" onClick={() => navigate("/sign-up")}>
+          SIGN UP NOW
+        </button>
       </div>
       <div className="homePage__cardholder">
         <Cards
-        label='Golden Solutions'
-        src='images/RechargeCard.jpeg'
-        text='Helping his GrandMa with recharge card'
-        path='#' 
+          label="Golden Solutions"
+          src="images/RechargeCard.jpeg"
+          text="Helping his GrandMa with recharge card"
+          path="#"
         />
         <Cards
-        label='Golden Solutions'
-        src='images/GroceryShopping.jpeg'
-        text='Helping with with grocery shopping'
-        path='#'
+          label="Golden Solutions"
+          src="images/GroceryShopping.jpeg"
+          text="Helping with with grocery shopping"
+          path="#"
         />
         <Cards
-        label='Golden Solutions'
-        src='images/gettingup.jpeg'
-        text='Help GrandPa take a walk around the park'
-        path='#'
+          label="Golden Solutions"
+          src="images/gettingup.jpeg"
+          text="Help GrandPa take a walk around the park"
+          path="#"
         />
       </div>
     </div>
